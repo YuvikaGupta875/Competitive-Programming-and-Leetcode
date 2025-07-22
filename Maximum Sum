@@ -1,0 +1,28 @@
+Question Link: https://codeforces.com/problemset/problem/1832/B
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n,k;
+        cin >> n >> k;
+        vector<int> arr(n);
+        for(int i =0;i<n;++i){
+            cin >> arr[i];
+        }
+        sort(arr.begin(), arr.end());
+        vector<long long> pref(n+1,0);
+        for(int i =0;i<n;i++){
+            pref[i+1] = pref[i]+arr[i];
+        }
+        long long ans =0;
+        for(int i =0;i<=k;i++){
+            long long curr = pref[n-(k-i)]- pref[2*i];
+            ans = max(ans, curr);
+        }
+        cout << ans << '\n';
+    }
+    return 0;
+}
