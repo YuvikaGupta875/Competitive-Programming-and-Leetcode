@@ -1,0 +1,30 @@
+Problem Link: https://codeforces.com/contest/2154/problem/A
+
+
+Solution:
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+int main(){
+  int t;
+  cin >>t;
+  while(t--){
+    int n,k;
+    cin >> n >>k;
+    string s;
+    cin >>s;
+    stack<int> st;
+    int cnt =0;
+    for(int i =0;i<n;i++){
+        if(s[i] =='1'){
+ if(st.empty()|| i-st.top()>=k){
+    cnt++;}
+    st.push(i);
+ }
+ else{continue;}
+    }
+    cout << cnt << endl;
+  }
+return 0;
+}
