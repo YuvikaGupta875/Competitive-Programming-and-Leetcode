@@ -1,0 +1,17 @@
+Problem Link: https://codeforces.com/contest/318/problem/A
+
+Solution:
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+int main(){
+  long long n,k;
+  cin >>n>>k;
+  long long h = (n+1)/2;
+  if(k<= h){cout << 2*k-1 << endl;}
+  else{
+    cout << 2*(k-h) << endl;
+  }
+return 0;
+}
