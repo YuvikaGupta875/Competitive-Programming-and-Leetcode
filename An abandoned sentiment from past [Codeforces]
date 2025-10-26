@@ -1,0 +1,43 @@
+Problem Link:  https://codeforces.com/problemset/problem/814/A
+My solution:
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+ 
+int main() {
+    int n,b;
+    cin >>n >>b;
+    vector<int>arr1(n);
+    vector<int>arr2(b);
+    bool inc = true;
+    int idx =-1;
+ 
+    for(int i=0;i<n;i++){
+      cin>>arr1[i];
+      if(arr1[i]==0){idx =i;}
+    }
+ 
+    for(int i =0;i<b;i++){
+      cin >>arr2[i];
+    }
+ 
+ 
+    if(b>1){cout << "Yes" << endl;
+    return 0;
+    }
+ 
+else{
+ 
+  arr1[idx] = arr2[0];
+ 
+for(int i =1;i<n;i++){
+ 
+  if(arr1[i-1] >= arr1[i]){inc = false;
+  break;}
+ 
+}
+if(inc){cout << "No" << endl;}
+else{cout << "Yes" << endl;}}
+return 0;
+}
